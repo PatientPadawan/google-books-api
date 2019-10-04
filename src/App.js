@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+import './App.css';
 
-function App() {
-  return (
-    <main className='App'>
-      {/* content goes here */}
-    </main>
-  );
+import searchBar from './searchBar/searchBar';
+import bookList from './bookList/bookList';
+
+class App extends Component {
+  render() {
+    return (
+      <main className='App'>
+        Learnin'
+      </main>
+    );
+  }
 }
 
 export default App;
