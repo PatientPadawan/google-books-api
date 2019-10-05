@@ -1,0 +1,12 @@
+.filterContainer {
+    background: lightgray;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.selectContainer {
+    padding: 0.3em;
+    margin-left: 5px;
+}
