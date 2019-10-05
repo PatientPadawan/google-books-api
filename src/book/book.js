@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './book.css';
 
-import bookInfo from '../bookInfo/bookInfo';
-import bookPicture from '../bookPicture/bookPicture';
 
-
-
-export default book;
+export default function Book(props) {
+    return(
+        <div className="bookInfo">
+            <img url={props.img} target='blank' alt="glasses on a sunrise"/>
+            {props.title}
+            {props.description}
+            {props.author}
+            {props.price}
+        </div>
+    )
+}

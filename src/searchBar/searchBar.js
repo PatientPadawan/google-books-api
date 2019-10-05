@@ -4,4 +4,4 @@ import './searchBar.css';
 import filter from '../filter/filter';
 import searchBox from '../searchBox/searchBox';
 
-export default searchBar;
+// export default SearchBar;

@@ -6,4 +6,4 @@ import printType from '../printType/printType';
 
 
 
-export default filter;
+// export default filter;
