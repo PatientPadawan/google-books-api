@@ -22,7 +22,45 @@ const Books = [
 ];
 
 class App extends Component {
-  
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      Books: []
+    };
+  }
+
+  componentDidMount() {
+    const url = 'https://www.googleapis.com/books/v1/volumes?q=quilts'
+    const options = {
+      method: 'GET',
+      headers: {
+        "Authorization": "Bearer AIzaSyAsrWdPCSFM1PlY03W0_vLWOSulgUg7u7Q",
+        "Content-Type" : "application/json"
+      }
+    };
+
+    fetch(url, options)
+    .then(res => {
+      if(!res.ok) {
+        throw new Error('Something went wrong, please try again later.');
+      }
+      return res;
+    })
+    .then(res => res.json())
+    .then(data => {
+      this.setState({
+        bookmarks: data,
+        error: null
+      });
+    })
+    .catch(err => {
+      this.setState({
+        error: err.message
+      });
+    });
+  }
+
   render() {
     return (
       <div className="App">
