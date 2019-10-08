@@ -10,9 +10,10 @@ export default function SearchBox(props) {
                     type="text"
                     name="userSearch"
                     id="userSearch"
-                    placeholder="Green Eggs and Ham"
+                    placeholder="word"
+                    onChange={e => props.setUserQuery(e.target.value)}
                 />
-                <button type="submit" id="userSubmit">Search</button>
+                <button onClick={e => props.handleSubmit(e)} type="submit" id="userSubmit">Search</button>
             </form>
         </div>
     )

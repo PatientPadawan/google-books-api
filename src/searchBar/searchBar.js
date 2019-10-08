@@ -8,8 +8,14 @@ class SearchBar extends Component {
     render() {
         return (
             <div>
-                <SearchBox />
-                <Filter />
+                <SearchBox 
+                    setUserQuery={this.props.setUserQuery}
+                    handleSubmit={this.props.handleSubmit}
+                />
+                <Filter
+                    setBookType={this.props.setBookType}
+                    setPrintType={this.props.setPrintType}
+                />
             </div>
         )
     }

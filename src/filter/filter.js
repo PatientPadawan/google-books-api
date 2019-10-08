@@ -6,7 +6,7 @@ export default function Filter(props) {
         <div className="filterContainer">
             <div className="selectContainer">
                 Print Type: 
-                <select>
+                <select onChange={e => props.setPrintType(e.target.value)}>
                     <option value="All">All</option>
                     <option value="Books">Books</option>
                     <option value="Magazines">Magazines</option>
@@ -14,7 +14,7 @@ export default function Filter(props) {
             </div>
             <div className="selectContainer">
                 Book Type: 
-                <select>
+                <select onChange={e => props.setBookType(e.target.value)}>
                     <option value="ebooks">eBooks</option>
                     <option value="free-ebooks">Free e-Books</option>
                     <option value="full">Full</option>
