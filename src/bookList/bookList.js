@@ -8,7 +8,11 @@ class BookList extends Component {
         const books = this
             .props
             .books
-            .map((book, i) => <Book { ...book } key={i}/>);
+            .map((book, i) => {
+                return (
+                    <Book { ...book } key={i}/>
+                )
+            });
         return (
             <div className="bookList">
                 {books}

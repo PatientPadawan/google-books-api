@@ -26,16 +26,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Books: []
+      Books: [],
     };
   }
 
   componentDidMount() {
-    const url = 'https://www.googleapis.com/books/v1/volumes?q=quilts'
+    const url = 'https://www.googleapis.com/books/v1/volumes?q=quilts&key=AIzaSyAsrWdPCSFM1PlY03W0_vLWOSulgUg7u7Q'
     const options = {
       method: 'GET',
       headers: {
-        "Authorization": "Bearer AIzaSyAsrWdPCSFM1PlY03W0_vLWOSulgUg7u7Q",
         "Content-Type" : "application/json"
       }
     };
@@ -45,12 +44,12 @@ class App extends Component {
       if(!res.ok) {
         throw new Error('Something went wrong, please try again later.');
       }
-      return res;
+
+      return res.json();
     })
-    .then(res => res.json())
     .then(data => {
       this.setState({
-        bookmarks: data,
+        Books: data.items,
         error: null
       });
     })
@@ -68,7 +67,7 @@ class App extends Component {
           Google Book Search
         </h1>
         <SearchBar />
-        <BookList books={Books}/>
+        <BookList books={this.state.Books}/>
       </div>
     );
   }

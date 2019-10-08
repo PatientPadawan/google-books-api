@@ -3,10 +3,11 @@ import './book.css';
 
 
 export default function Book(props) {
+    debugger
     return(
         <div className="bookInfo">
             <h1 className="bookTitle">
-                {props.title}
+                {props.volumeInfo.title}
             </h1>
             <div className="bookRow">
                 <img src={props.img} alt="book cover" className="bookPicture" />
